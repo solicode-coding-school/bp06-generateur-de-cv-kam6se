@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background: #f0f0f0;
+    color: #333;
+   
+}
+
+.container {
+   
+    display: flex;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.form-section {
+    flex: 1;
+    background: rgb(212, 210, 210);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.preview-section {
+    flex: 1;
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background: #3490db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #170685;
+    transform: translateY(-2px);
+}
+
+#cv-preview {
+    border: 1px solid #080808;
+    padding: 30px;
+    min-height: 500px;
+    border-radius: 8px;
+    background: #d6d3d3;
+}
+
+.modern-cv {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+}
+
+.cv-sidebar {
+    background: #1f204adc;
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.cv-main {
+    padding: 20px;
+}
+
+.photo-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0c00f4;
+    
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.cv-section {
+    margin-bottom: 25px;
+}
+
+.cv-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.skill-item {
+    background: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.experience-item, .education-item {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    border-left: 3px solid #3498db;
+}
+
+/* Nouveau style pour les boutons d'action */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-button {
+    background: #0d2dac;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+.remove-button {
+    background: #e7803c;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+.dynamic-inputs {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.import-export-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.import-export-buttons button {
+    background: #2c3e50;
+}
+
+.import-export-buttons button:hover {
+    background: #34495e;
+}
+
+#importData {
+    display: none;
+}
+
+.import-label {
+    background: #2c3e50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.import-label:hover {
+    background: #376394;
+}

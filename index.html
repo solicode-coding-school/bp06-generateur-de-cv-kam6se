@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de CV Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2 class="section-title">Générateur de CV</h2>
+            
+            <!-- Informations personnelles -->
+            <div class="input-group">
+                <h3>Informations Personnelles</h3>
+                <input type="file" id="photo" accept="image/*" onchange="previewPhoto(event)">
+                <input type="text" id="fullName" placeholder="Nom complet">
+                <input type="email" id="email" placeholder="Email">
+                <input type="tel" id="phone" placeholder="Téléphone">
+                <input type="text" id="address" placeholder="Adresse">
+                <textarea id="profile" placeholder="Profil professionnel"></textarea>
+            </div>
+
+            <!-- Formation -->
+            <div class="input-group">
+                <h3>Formation</h3>
+                <div id="education-container">
+                    <div class="dynamic-inputs">
+                        <input type="text" placeholder="Diplôme" class="education-diploma">
+                        <input type="text" placeholder="École" class="education-school">
+                        <input type="text" placeholder="Année" class="education-year">
+                        <textarea placeholder="Description" class="education-description"></textarea>
+                        <button class="remove-button" onclick="removeEducation(this)">Supprimer</button>
+                    </div>
+                </div>
+                <button class="add-button" onclick="addEducation()">+ Ajouter Formation</button>
+            </div>
+
+            <!-- Expérience -->
+            <div class="input-group">
+                <h3>Expérience Professionnelle</h3>
+                <div id="experience-container">
+                    <div class="dynamic-inputs">
+                        <input type="text" placeholder="Poste" class="experience-title">
+                        <input type="text" placeholder="Entreprise" class="experience-company">
+                        <input type="text" placeholder="Période" class="experience-period">
+                        <textarea placeholder="Description" class="experience-description"></textarea>
+                        <button class="remove-button" onclick="removeExperience(this)">Supprimer</button>
+                    </div>
+                </div>
+                <button class="add-button" onclick="addExperience()">+ Ajouter Expérience</button>
+            </div>
+
+            <!-- Compétences -->
+            <div class="input-group">
+                <h3>Compétences</h3>
+                <div id="skills-container">
+                    <div class="dynamic-inputs">
+                        <input type="text" placeholder="Compétence" class="skill-input">
+                        <select class="skill-level">
+                            <option value="Débutant">Débutant</option>
+                            <option value="Intermédiaire">Intermédiaire</option>
+                            <option value="Avancé">Avancé</option>
+                            <option value="Expert">Expert</option>
+                        </select>
+                        <button class="remove-button" onclick="removeSkill(this)">Supprimer</button>
+                    </div>
+                </div>
+                <button class="add-button" onclick="addSkill()">+ Ajouter Compétence</button>
+            </div>
+
+            <!-- Langues -->
+            <div class="input-group">
+                <h3>Langues</h3>
+                <div id="languages-container">
+                    <div class="dynamic-inputs">
+                        <input type="text" placeholder="Langue" class="language-name">
+                        <select class="language-level">
+                            <option value="Débutant">Débutant</option>
+                            <option value="Intermédiaire">Intermédiaire</option>
+                            <option value="Avancé">Avancé</option>
+                            <option value="Natif">Natif</option>
+                        </select>
+                        <button class="remove-button" onclick="removeLanguage(this)">Supprimer</button>
+                    </div>
+                </div>
+                <button class="add-button" onclick="addLanguage()">+ Ajouter Langue</button>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="generateCV()">Générer CV</button>
+                <button onclick="downloadCV()">Télécharger mon CV</button>
+                <button onclick="refreshLocalStorage()" class="refresh-button">
+                    Réinitialiser  
+                </button>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="section-title">Aperçu du CV</h2>
+            <div id="cv-preview"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="localStorage.js"></script>
+</body>
+</html>
