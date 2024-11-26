@@ -19,11 +19,11 @@ function saveToLocalStorage() {
 
 
 function getEducations() {
-    var educations = [];
-    var eduElements = document.getElementsByClassName('dynamic-inputs');
+    let educations = [];
+    let eduElements = document.getElementsByClassName('dynamic-inputs');
     
-    for(var i = 0; i < eduElements.length; i++) {
-        var edu = eduElements[i];
+    for(let i = 0; i < eduElements.length; i++) {
+        let edu = eduElements[i];
         if(edu.querySelector('.education-diploma')) {
             educations.push({
                 diploma: edu.querySelector('.education-diploma').value,
@@ -37,11 +37,11 @@ function getEducations() {
 }
 
 function getExperiences() {
-    var experiences = [];
-    var expElements = document.getElementsByClassName('dynamic-inputs');
+    let experiences = [];
+    let expElements = document.getElementsByClassName('dynamic-inputs');
     
-    for(var i = 0; i < expElements.length; i++) {
-        var exp = expElements[i];
+    for(let i = 0; i < expElements.length; i++) {
+        let exp = expElements[i];
         if(exp.querySelector('.experience-title')) {
             experiences.push({
                 title: exp.querySelector('.experience-title').value,
@@ -55,11 +55,11 @@ function getExperiences() {
 }
 
 function getSkills() {
-    var skills = [];
-    var skillElements = document.getElementsByClassName('dynamic-inputs');
+    let skills = [];
+    let skillElements = document.getElementsByClassName('dynamic-inputs');
     
-    for(var i = 0; i < skillElements.length; i++) {
-        var skill = skillElements[i];
+    for(let i = 0; i < skillElements.length; i++) {
+        let skill = skillElements[i];
         if(skill.querySelector('.skill-input')) {
             skills.push({
                 name: skill.querySelector('.skill-input').value,
@@ -71,11 +71,11 @@ function getSkills() {
 }
 
 function getLanguages() {
-    var languages = [];
-    var langElements = document.getElementsByClassName('dynamic-inputs');
+    let languages = [];
+    let langElements = document.getElementsByClassName('dynamic-inputs');
     
-    for(var i = 0; i < langElements.length; i++) {
-        var lang = langElements[i];
+    for(let i = 0; i < langElements.length; i++) {
+        let lang = langElements[i];
         if(lang.querySelector('.language-name')) {
             languages.push({
                 name: lang.querySelector('.language-name').value,
@@ -88,9 +88,9 @@ function getLanguages() {
 
 
 function loadFromLocalStorage() {
-    var savedData = localStorage.getItem('cvData');
+    let savedData = localStorage.getItem('cvData');
     if (savedData) {
-        var cvData = JSON.parse(savedData);
+        let cvData = JSON.parse(savedData);
         
         
         document.getElementById('fullName').value = cvData.personalInfo.fullName;
@@ -100,10 +100,10 @@ function loadFromLocalStorage() {
         document.getElementById('profile').value = cvData.personalInfo.profile;
         photoDataUrl = cvData.personalInfo.photo;
 
-        for(var i = 0; i < cvData.educations.length; i++) {
-            var edu = cvData.educations[i];
+        for(let i = 0; i < cvData.educations.length; i++) {
+            let edu = cvData.educations[i];
             addEducation();
-            var lastEdu = document.querySelector('#education-container .dynamic-inputs:last-child');
+            let lastEdu = document.querySelector('#education-container .dynamic-inputs:last-child');
             lastEdu.querySelector('.education-diploma').value = edu.diploma;
             lastEdu.querySelector('.education-school').value = edu.school;
             lastEdu.querySelector('.education-year').value = edu.year;
@@ -111,10 +111,10 @@ function loadFromLocalStorage() {
         }
 
       
-        for(var i = 0; i < cvData.experiences.length; i++) {
-            var exp = cvData.experiences[i];
+        for(let i = 0; i < cvData.experiences.length; i++) {
+            let exp = cvData.experiences[i];
             addExperience();
-            var lastExp = document.querySelector('#experience-container .dynamic-inputs:last-child');
+            let lastExp = document.querySelector('#experience-container .dynamic-inputs:last-child');
             lastExp.querySelector('.experience-title').value = exp.title;
             lastExp.querySelector('.experience-company').value = exp.company;
             lastExp.querySelector('.experience-period').value = exp.period;
@@ -122,19 +122,19 @@ function loadFromLocalStorage() {
         }
 
         
-        for(var i = 0; i < cvData.skills.length; i++) {
-            var skill = cvData.skills[i];
+        for(let i = 0; i < cvData.skills.length; i++) {
+            let skill = cvData.skills[i];
             addSkill();
-            var lastSkill = document.querySelector('#skills-container .dynamic-inputs:last-child');
+            let lastSkill = document.querySelector('#skills-container .dynamic-inputs:last-child');
             lastSkill.querySelector('.skill-input').value = skill.name;
             lastSkill.querySelector('.skill-level').value = skill.level;
         }
 
        
-        for(var i = 0; i < cvData.languages.length; i++) {
-            var lang = cvData.languages[i];
+        for(let i = 0; i < cvData.languages.length; i++) {
+            let lang = cvData.languages[i];
             addLanguage();
-            var lastLang = document.querySelector('#languages-container .dynamic-inputs:last-child');
+            let lastLang = document.querySelector('#languages-container .dynamic-inputs:last-child');
             lastLang.querySelector('.language-name').value = lang.name;
             lastLang.querySelector('.language-level').value = lang.level;
         }
@@ -147,19 +147,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function addSaveEvents() {
-    var inputs = document.getElementsByTagName('input');
-    var textareas = document.getElementsByTagName('textarea');
-    var selects = document.getElementsByTagName('select');
+    let inputs = document.getElementsByTagName('input');
+    let textareas = document.getElementsByTagName('textarea');
+    let selects = document.getElementsByTagName('select');
 
-    for(var i = 0; i < inputs.length; i++) {
+    for(let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener('change', saveToLocalStorage);
     }
 
-    for(var i = 0; i < textareas.length; i++) {
+    for(let i = 0; i < textareas.length; i++) {
         textareas[i].addEventListener('change', saveToLocalStorage);
     }
 
-    for(var i = 0; i < selects.length; i++) {
+    for(let i = 0; i < selects.length; i++) {
         selects[i].addEventListener('change', saveToLocalStorage);
     }
 }
